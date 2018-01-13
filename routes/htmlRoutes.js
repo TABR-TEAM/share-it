@@ -11,19 +11,19 @@ module.exports = function(app) {
     
 // index route loads home page
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
+    res.sendFile(path.join(__dirname, "../public/home-page.html"));
 });
 // profile route loads profile page
-app.get("/profile", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/profile.html"));
+app.get("/profile-page", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/profile-page.html"));
 });
 // categories route loads categories page
 app.get("/categories", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/categories.html"));    
 });
 // create_profile route loads create_profile page
-app.get("/create_profile", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/create_profile.html"));
+app.get("/create-profile", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/create-profile.html"));
 });
 
 };
