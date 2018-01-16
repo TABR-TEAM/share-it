@@ -10,10 +10,10 @@ module.exports = function(app) {
             res.json(dbCategories);
         });
     });
-    app.get("/api/categories/:id", function(req, res) {
+    app.get("/api/categories/:items", function(req, res) {
         db.Categories.findOne({
             where: {
-                id: req.params.id
+                id: req.params.items
             },
             include: [dbCategories]
         }).then(function(dbCategories) {
@@ -25,10 +25,10 @@ module.exports = function(app) {
             res.json(dbCategories);
         });
     });
-    app.delete("/api/categories/:id", function(req, res) {
+    app.delete("/api/categories/:items", function(req, res) {
         db.Categories.destroy({
             where: {
-                id: req.params.id
+                id: req.params.items
             }
         }).then(function(dbCategories) {
             res.json(dbCategories);
