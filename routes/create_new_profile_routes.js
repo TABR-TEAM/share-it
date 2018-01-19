@@ -22,7 +22,7 @@ module.exports = function(app) {
     // GET route for retrieving a single profile
     app.get("/api/profiles/:id", function(req, res) {
         db.Profile.findOne({
-            where: {
+            where: {                
                 id: req.params.id
             },
             include: [dbProfile]

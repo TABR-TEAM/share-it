@@ -11,11 +11,11 @@ module.exports = function(app) {
             res.json(dbCategories);
         });
     });
-    app.get("/api/categories/:items", function(req, res) {
+    app.get("/api/categories/:itemsId", function(req, res) {
         // GET route for retrieving a single item
         db.Categories.findOne({
             where: {
-                id: req.params.items
+                id: req.params.itemsId
             },
             include: [dbCategories]
         }).then(function(dbCategories) {
@@ -28,11 +28,11 @@ module.exports = function(app) {
             res.json(dbCategories);
         });
     });
-    app.delete("/api/categories/:items", function(req, res) {
+    app.delete("/api/categories/:itemsId", function(req, res) {
         // DELETE route for deleting an item
         db.Categories.destroy({
             where: {
-                id: req.params.items
+                id: req.params.itemsId
             }
         }).then(function(dbCategories) {
             res.json(dbCategories);
