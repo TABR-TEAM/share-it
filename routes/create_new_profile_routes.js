@@ -33,6 +33,7 @@ module.exports = function(app) {
     // POST route for saving a new profile
     app.post("/api/profiles", function(req, res) {
         db.Profile.create(req.body).then(function(dbProfile) {
+            console.log(dbProfile)
             res.json(dbProfile);
         });
     });
