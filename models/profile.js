@@ -1,4 +1,3 @@
-
 module.exports = function (sequelize, DataTypes) {
   var Profile = sequelize.define("Profile", {
     name: DataTypes.STRING,
@@ -15,3 +14,4 @@ module.exports = function (sequelize, DataTypes) {
   // };
   return Profile;
 };
+
