@@ -3,7 +3,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-    // GET route for getting all of the profiles
+    // GET route for getting all of the categories
     app.get("/api/categories", function(req, res) {
         db.Categories.findAll({
             include: [db.Categories]
