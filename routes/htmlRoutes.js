@@ -14,8 +14,8 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home-page.html"));
 });
 // profile route loads profile page
-app.get("/profile-page", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/profile-page.html"));
+app.get("/profile-home", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/profile-home.html"));
 });
 // categories route loads categories page
 app.get("/categories", function(req, res) {

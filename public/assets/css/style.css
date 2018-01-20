@@ -7,6 +7,7 @@
 }
 
 body {
+    padding-top: 100px;
     background-image: url("../images/background.png");
     font-family: 'Ubuntu', sans-serif;
     text-align: center 
@@ -39,6 +40,10 @@ body {
     font-size: 90px
 }
 
+#jumbotron-profile {
+    align: left
+}
+
 .jumbotron {
     padding: 40px;
     padding-bottom: 8px;
@@ -65,7 +70,41 @@ a:hover {
 .card-header {
     color: #14cc8a;
     font-family: 'Baloo', cursive;
-    letter-spacing: 3px
+    /* letter-spacing: 3px */
+}
+
+.category-card {
+    padding: 10px
+}
+
+.profile-user-card {
+    padding: 10px;
+}
+
+#categories-category-h1,
+#profile-items-own-h1,
+#profile-items-borrowing-h1 {
+    color: #14cc8a;
+    font-family: 'Baloo', cursive;
+    text-align: left;
+    /* letter-spacing: 3px */
+}
+
+#categories-card-title,
+#profile-card-title {
+    padding-top: 30px
+}
+
+#categories-card-text,
+#profile-card-text {
+    text-align: left
+}
+
+.categories-card-image,
+.profile-card-user-image {
+    margin: auto;
+    height: 175px;
+    padding-bottom: 6px
 }
 
 .form-control:focus {

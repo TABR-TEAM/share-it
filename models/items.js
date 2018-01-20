@@ -2,10 +2,11 @@
 module.exports = function (sequelize, DataTypes) {
     var Items = sequelize.define("Items", {
       name: DataTypes.STRING,
+      description: DataTypes.TEXT
         
     });
     // Items.associate = function(models) {
-    //     Items.hasMany(models.Items, {
+    //     Items.belongsTo(models.Profiles, {
     //         onDelete: "cascade"
     //     });
     // };

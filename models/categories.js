@@ -2,10 +2,8 @@
 module.exports = function (sequelize, DataTypes) {
     var Categories = sequelize.define("Categories", {
       name: DataTypes.STRING,
-      email: DataTypes.STRING,
-      password: DataTypes.STRING,
-      neighborhood: DataTypes.STRING,
-      city: DataTypes.STRING,
+      description: DataTypes.TEXT,
+      
   
     });
     // Categories.associate = function(models) {
