@@ -21,6 +21,12 @@ app.get("/profile-home", function(req, res) {
 app.get("/categories", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/categories.html"));    
 });
+//testing
+app.get("/categories/:category", function(req, res) {
+    console.log(req.params.category)
+    res.sendFile(path.join(__dirname, "../public/categories.html"));    
+});
+//end testing
 // create_profile route loads create_profile page
 app.get("/create-profile", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/create-profile.html"));
