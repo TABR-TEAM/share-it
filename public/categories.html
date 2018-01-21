@@ -31,8 +31,22 @@
 				<div class="card-block">
 					<h4 class="card-title">Item Name</h4>
 					<p class="card-text" id="categories-card-text">
-						Owner: <br>
-						Location:
+						Description
+						<br> Owner:
+						<br> Location:
+					</p>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#add-item-modal">borrow this item</button>
+				</div>
+			</div>
+			<div class="card category-card col-md-3">
+				<img class="categories-card-image" src="..\assets\images\placeholder-image.png">
+				<div class="card-block">
+					<h4 class="card-title">Item Name</h4>
+					<p class="card-text" id="categories-card-text">
+						Description
+						<br> Owner:
+						<br> Location:
 					</p>
 				</div>
 			</div>
@@ -41,8 +55,9 @@
 				<div class="card-block">
 					<h4 class="card-title">Item Name</h4>
 					<p class="card-text" id="categories-card-text">
-						Owner: <br>
-						Location:
+						Description
+						<br> Owner:
+						<br> Location:
 					</p>
 				</div>
 			</div>
@@ -51,8 +66,9 @@
 				<div class="card-block">
 					<h4 class="card-title">Item Name</h4>
 					<p class="card-text" id="categories-card-text">
-						Owner: <br>
-						Location:
+						Description
+						<br> Owner:
+						<br> Location:
 					</p>
 				</div>
 			</div>
@@ -61,22 +77,49 @@
 				<div class="card-block">
 					<h4 class="card-title">Item Name</h4>
 					<p class="card-text" id="categories-card-text">
-						Owner: <br>
-						Location:
-					</p>
-				</div>
-			</div>
-			<div class="card category-card col-md-3">
-				<img class="categories-card-image" src="..\assets\images\placeholder-image.png">
-				<div class="card-block">
-					<h4 class="card-title">Item Name</h4>
-					<p class="card-text" id="categories-card-text">
-						Owner: <br>
-						Location:
+						Description
+						<br> Owner:
+						<br> Location:
 					</p>
 				</div>
 			</div>
 		</div>
+
+<!-- Modal -->
+<div id="add-item-modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">set up a borrow request</h4>
+			</div>
+
+			<div class="modal-body">
+				<form>
+					<div class="form-group borrow-date">
+						<label for="borrow-start-date">start date</label>
+						<input id="date" type="date" value="yyyy-mm-dd">
+					</div>
+					<div class="form-group borrow-date">
+						<label for="borrow-end-date">end date</label>
+						<input id="date" type="date" value="yyyy-mm-dd">
+					</div>
+				</form>
+			</div>
+
+			<div class="modal-footer">
+				<small id="borrow-modal-button-text" class="form-text text-muted">clicking the "borrow it!" button will send an email to this item's owner for approval</small>
+				<button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+				<button type="button" class="btn btn-default">borrow it!</button>
+			</div>
+			
+		</div>
+
+	</div>
+</div>
 
 	<div class="row" id="footer">
 		<div class="col-md-12">
