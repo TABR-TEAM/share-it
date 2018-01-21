@@ -124,8 +124,7 @@ a:hover {
 
 /* end modal css */
 
-.form-control:focus,
-.date:focus {
+.form-control:focus {
     border-color: #14cc8a;
     box-shadow: inset 0 1px 1px rgba(0, 0.075, 0.075, 0), 0 0 8px #14cc8a (255, 0, 0, 0.6);
 }
