@@ -2,18 +2,21 @@
 <html>
 <head>
 	<title>share-it!</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<link rel="icon" type="image/x-icon" href="../assets/images/carrot_orange_32.png">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Baloo|Ubuntu" rel="stylesheet">
 </head>
 
 <body>
+
 <div class="container">
 
 	<nav class="navbar fixed-top navbar-light" style="background-color: #fff;">
-		<a class="navbar-brand" id="navbar-title" href="#"><span><img src="../assets/images/carrot_orange_64.png">share-it!</span></a>
+		<a class="navbar-brand" id="navbar-title" href="/"><span><img src="../assets/images/carrot_orange_64.png">share-it!</span></a>
 	</nav>
 
 	<div class="jumbotron" style="background-color: #ffffff;">
@@ -27,18 +30,70 @@
 	</div>
 
 	<div>
-		<h1 id="profile-items-own-h1">items you own <a href="#">
-				<span>&#x2b;</span>
-			  </a></h1>
+		<h1 id="profile-items-own-h1">items you own 
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#add-item-modal">add an item to share</button>
+	</div>
+
+	<!-- Modal -->
+	<div id="add-item-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+	
+			<!-- Modal content-->
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">add an item to share</h4>
+				</div>
+
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="add-item-name">item name</label>
+							<input type="text" class="form-control" id="add-item-name">
+						</div>
+						<div class="form-group">
+							<label for="add-item-category">item category</label>
+							<select class="form-control" id="add-item-category">
+								<option selected></option>
+								<option value="sports">sports equipment</option>
+								<option value="tools">tools</option>
+								<option value="outdoors">outdoors gear</option>
+								<option value="furniture">furniture</option>
+								<option value="electronics">electronics</option>
+								<option value="yard">yard</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="add-item-description">short description</label>
+							<textarea class="form-control" id="add-item-description" rows="2"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="add-item-image-link">image link</label>
+							<input type="url" class="form-control" id="add-item-image-link">
+						</div>
+
+					</form>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+					<button type="button" class="btn btn-default">add it!</button>
+				</div>
+			</div>
+	
+		</div>
 	</div>
 	
-	<div class="card-deck row" id="profile-items-own-cards">
+	<div class="card-columns row clearfix" id="profile-items-own-cards">
 		<div class="card category-card col-md-3">
 			<img class="categories-card-image" src="..\assets\images\placeholder-image.png">
 			<div class="card-block">
 				<h4 class="card-title">Item Name</h4>
 				<p class="card-text" id="profile-card-text">
-					Borrower:
+					Description
+					<br> Borrower:
 					<br> Location:
 				</p>
 			</div>
@@ -48,7 +103,8 @@
 			<div class="card-block">
 				<h4 class="card-title">Item Name</h4>
 				<p class="card-text" id="profile-card-text">
-					Borrower:
+					Description
+					<br> Borrower:
 					<br> Location:
 				</p>
 			</div>
@@ -58,7 +114,8 @@
 			<div class="card-block">
 				<h4 class="card-title">Item Name</h4>
 				<p class="card-text" id="profile-card-text">
-					Borrower:
+					Description
+					<br> Borrower:
 					<br> Location:
 				</p>
 			</div>
@@ -68,7 +125,8 @@
 			<div class="card-block">
 				<h4 class="card-title">Item Name</h4>
 				<p class="card-text" id="profile-card-text">
-					Borrower:
+					Description
+					<br> Borrower:
 					<br> Location:
 				</p>
 			</div>
@@ -78,7 +136,8 @@
 			<div class="card-block">
 				<h4 class="card-title">Item Name</h4>
 				<p class="card-text" id="profile-card-text">
-					Borrower:
+					Description
+					<br> Borrower:
 					<br> Location:
 				</p>
 			</div>
@@ -91,13 +150,14 @@
 		<h1 id="profile-items-borrowing-h1">items you are borrowing</h1>
 	</div>
 	
-	<div class="card-deck row" id="profile-items-own-cards">
+	<div class="card-columns row clearfix" id="profile-items-own-cards">
 		<div class="card category-card col-md-3">
 			<img class="categories-card-image" src="..\assets\images\placeholder-image.png">
 			<div class="card-block">
 				<h4 class="card-title">Item Name</h4>
 				<p class="card-text" id="profile-card-text">
-					Owner:
+					Description
+					<br> Owner:
 					<br> Location:
 				</p>
 			</div>
@@ -107,7 +167,8 @@
 			<div class="card-block">
 				<h4 class="card-title">Item Name</h4>
 				<p class="card-text" id="profile-card-text">
-					Owner:
+					Description
+					<br> Owner:
 					<br> Location:
 				</p>
 			</div>
@@ -117,7 +178,8 @@
 			<div class="card-block">
 				<h4 class="card-title">Item Name</h4>
 				<p class="card-text" id="profile-card-text">
-					Owner:
+					Description
+					<br> Owner:
 					<br> Location:
 				</p>
 			</div>
@@ -127,7 +189,8 @@
 			<div class="card-block">
 				<h4 class="card-title">Item Name</h4>
 				<p class="card-text" id="profile-card-text">
-					Owner:
+					Description
+					<br> Owner:
 					<br> Location:
 				</p>
 			</div>
@@ -137,7 +200,8 @@
 			<div class="card-block">
 				<h4 class="card-title">Item Name</h4>
 				<p class="card-text" id="profile-card-text">
-					Owner:
+					Description
+					<br> Owner:
 					<br> Location:
 				</p>
 			</div>
@@ -151,6 +215,23 @@
 	</div>
 
 </div>
+
+<!-- JS code -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+ crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+ crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+ crossorigin="anonymous"></script>
+<!--JS below-->
+
+<!-- Enable bootstrap 4 theme -->
+<script>
+	window.__theme = 'bs4';
+	$('#myModal').on('shown.bs.modal', function () {
+			$('#myInput').focus()
+		});
+</script>
 
 </body>
 </html>

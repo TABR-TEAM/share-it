@@ -34,6 +34,17 @@ body {
     font-size: 40px
 }
 
+.login-navbar,
+#login-btn,
+.login-form {
+    margin: 5px
+}
+
+#sign-up-link,
+#profile-home-link {
+    color: #14cc8a
+}
+
 #jumbotron-title {
     font-family: 'Baloo', cursive;
     color: #14CC8A;
@@ -106,6 +117,23 @@ a:hover {
     height: 175px;
     padding-bottom: 6px
 }
+
+/* modal css begin */
+.modal-body {
+    text-align: left
+}
+
+.modal-header {
+    background-color: #14cc8a;background-color: #14cc8a;
+    font-family: 'Baloo', cursive;
+    color: #fff;
+}
+
+.borrow-date {
+    text-align: right
+}
+
+/* end modal css */
 
 .form-control:focus {
     border-color: #14cc8a;

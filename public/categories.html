@@ -3,13 +3,13 @@
 <html>
 <head>
 	<title>share-it!</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<link rel="icon" type="image/x-icon" href="../assets/images/carrot_orange_32.png">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Baloo|Ubuntu" rel="stylesheet">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-	
 </head>
 
 <body>
@@ -18,7 +18,7 @@
 	<!-- fixed navbar -->
 	<nav class="navbar fixed-top navbar-light" style="background-color: #fff;">
 		<!-- navbar title -->
-		<a class="navbar-brand" id="navbar-title" href="#"><span><img src="../assets/images/carrot_orange_64.png">share-it!</span></a>
+		<a class="navbar-brand" id="navbar-title" href="/"><span><img src="../assets/images/carrot_orange_64.png">share-it!</span></a>
 	</nav>
 
 	<div>
@@ -31,8 +31,25 @@
 				<div class="card-block">
 					<h4 class="card-title">Item Name</h4>
 					<p class="card-text" id="categories-card-text">
-						Owner: <br>
-						Location:
+						Description
+						<br> Owner:
+						<br> Location:
+					</p>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#add-item-modal">borrow this item</button>
+				</div>
+			</div>
+
+	<!-- below is commented out because they are basically just templates and same as the above card except without button-->
+
+			<!-- <div class="card category-card col-md-3">
+				<img class="categories-card-image" src="..\assets\images\placeholder-image.png">
+				<div class="card-block">
+					<h4 class="card-title">Item Name</h4>
+					<p class="card-text" id="categories-card-text">
+						Description
+						<br> Owner:
+						<br> Location:
 					</p>
 				</div>
 			</div>
@@ -41,8 +58,9 @@
 				<div class="card-block">
 					<h4 class="card-title">Item Name</h4>
 					<p class="card-text" id="categories-card-text">
-						Owner: <br>
-						Location:
+						Description
+						<br> Owner:
+						<br> Location:
 					</p>
 				</div>
 			</div>
@@ -51,8 +69,9 @@
 				<div class="card-block">
 					<h4 class="card-title">Item Name</h4>
 					<p class="card-text" id="categories-card-text">
-						Owner: <br>
-						Location:
+						Description
+						<br> Owner:
+						<br> Location:
 					</p>
 				</div>
 			</div>
@@ -61,22 +80,49 @@
 				<div class="card-block">
 					<h4 class="card-title">Item Name</h4>
 					<p class="card-text" id="categories-card-text">
-						Owner: <br>
-						Location:
+						Description
+						<br> Owner:
+						<br> Location:
 					</p>
 				</div>
-			</div>
-			<div class="card category-card col-md-3">
-				<img class="categories-card-image" src="..\assets\images\placeholder-image.png">
-				<div class="card-block">
-					<h4 class="card-title">Item Name</h4>
-					<p class="card-text" id="categories-card-text">
-						Owner: <br>
-						Location:
-					</p>
-				</div>
-			</div>
+			</div> -->
 		</div>
+
+<!-- Modal -->
+<div id="add-item-modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">set up a borrow request</h4>
+			</div>
+
+			<div class="modal-body">
+				<form>
+					<div class="form-group borrow-date">
+						<label for="borrow-start-date">start date</label>
+						<input id="date" type="date" value="yyyy-mm-dd">
+					</div>
+					<div class="form-group borrow-date">
+						<label for="borrow-end-date">end date</label>
+						<input id="date" type="date" value="yyyy-mm-dd">
+					</div>
+				</form>
+			</div>
+
+			<div class="modal-footer">
+				<small id="borrow-modal-button-text" class="form-text text-muted">clicking the "borrow it!" button will send an email to this item's owner for approval</small>
+				<button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+				<button type="button" class="btn btn-default">borrow it!</button>
+			</div>
+			
+		</div>
+
+	</div>
+</div>
 
 	<div class="row" id="footer">
 		<div class="col-md-12">
@@ -85,6 +131,23 @@
 	</div>
 
 </div>
+
+<!-- JS code -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+ crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+ crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+ crossorigin="anonymous"></script>
+<!--JS below-->
+
+<!-- Enable bootstrap 4 theme -->
+<script>
+	window.__theme = 'bs4';
+	$('#myModal').on('shown.bs.modal', function () {
+		$('#myInput').focus()
+	});
+</script>
 <script src="./js/categories.js"></script>
 </body>
 </html>
