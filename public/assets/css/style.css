@@ -34,6 +34,16 @@ body {
     font-size: 40px
 }
 
+.login-navbar,
+#login-btn,
+.login-form {
+    margin: 5px
+}
+
+#sign-up-link {
+    color: #0f9967
+}
+
 #jumbotron-title {
     font-family: 'Baloo', cursive;
     color: #14CC8A;
