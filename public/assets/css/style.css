@@ -107,6 +107,18 @@ a:hover {
     padding-bottom: 6px
 }
 
+/* modal css begin */
+.modal-body {
+    text-align: left
+}
+
+.modal-header {
+    background-color: #14cc8a;background-color: #14cc8a;
+    font-family: 'Baloo', cursive;
+    color: #fff;
+}
+/* end modal css */
+
 .form-control:focus {
     border-color: #14cc8a;
     box-shadow: inset 0 1px 1px rgba(0, 0.075, 0.075, 0), 0 0 8px #14cc8a (255, 0, 0, 0.6);
