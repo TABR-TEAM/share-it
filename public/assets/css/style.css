@@ -40,8 +40,9 @@ body {
     margin: 5px
 }
 
-#sign-up-link {
-    color: #0f9967
+#sign-up-link,
+#profile-home-link {
+    color: #14cc8a
 }
 
 #jumbotron-title {
