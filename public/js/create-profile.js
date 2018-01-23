@@ -17,5 +17,8 @@ $('#create-profile-button').on('click', function(event) {
   }
   console.log(user)
 
-  $.post('api/profiles', user)
+  $.post('api/profiles', user).then(function (params) {
+    window.location.href = '/profile-home'
+  })
+
 })

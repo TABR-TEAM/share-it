@@ -33,6 +33,16 @@ module.exports = function(app) {
     // POST route for saving a new profile
     app.post("/api/profiles", function(req, res) {
         db.Profile.create(req.body).then(function(dbProfile) {
+            var user = {
+                id: dbProfile.dataValues.id,
+                name: dbProfile.dataValues.name,
+                email: dbProfile.dataValues.email,
+                neighborhood: dbProfile.dataValues.neighborhood,
+                city: dbProfile.dataValues.city
+            }
+            req.session.user = user
+            req.session.user.loggedIn = true
+            console.log(req.session)
             res.json(dbProfile);
         });
     });

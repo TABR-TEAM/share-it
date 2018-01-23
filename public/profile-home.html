@@ -79,7 +79,7 @@
 
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
-					<button type="button" class="btn btn-default">add it!</button>
+					<button id="addIt" type="button" class="btn btn-default">add it!</button>
 				</div>
 			</div>
 	
@@ -226,12 +226,8 @@
 <!--JS below-->
 
 <!-- Enable bootstrap 4 theme -->
-<script>
-	window.__theme = 'bs4';
-	$('#myModal').on('shown.bs.modal', function () {
-			$('#myInput').focus()
-		});
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="./js/profile-home.js"></script>
 
 </body>
 </html>
