@@ -28,5 +28,8 @@ $("#addIt").on("click", function(event){
   $.post("/api/categories", item).then(function (res) {
     console.log(res)
   })
+  $(function () {
+    $('#add-item-modal').modal('toggle');
+ });
 
 })
