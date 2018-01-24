@@ -5,6 +5,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs  = require('express-handlebars');
+var session = require('express-session');
 
 // Sets up the Express App
 // =============================================================
@@ -13,6 +14,25 @@ var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
 var db = require("./models");
+
+app.use(session({
+  secret: process.env.SESSIONSECRET || "Keyboard Cat" ,
+  resave: false,
+  saveUninitialized: true
+}));
+
+//middleware for setting up a user object when anyone first come to the appplication
+function userSetup(req, res, next) {
+
+  if (!req.session.user) {
+    req.session.user = {};
+    req.session.user.loggedIn = false;
+  }
+  next()
+}
+
+//using middlewhere acrossed the entire application before any route gets hit.
+app.use(userSetup)
 
 
 // Sets up the Express app to handle data parsing
@@ -33,6 +53,7 @@ app.set('view engine', 'handlebars');
  require("./routes/create_new_profile_routes.js")(app);
 // require("./routes/post-api-routes.js")(app);
 require("./routes/categories_api_routes.js")(app);
+require("./routes/session.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

@@ -78,7 +78,6 @@ module.exports = function(app) {
     });
     //end of test route
     app.post("/api/categories", function(req, res) {
-        // POST route for saving a new item
         db.Items.create(req.body).then(function(dbCategories) {
             res.json(dbCategories);
         });
