@@ -18,9 +18,9 @@ app.get("/profile-home", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/profile-home.html"));
 });
 // categories route loads categories page
-app.get("/categories", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/categories.html"));    
-});
+// app.get("/categories", function(req, res) {
+//     res.sendFile(path.join(__dirname, "../public/categories.html"));    
+// });
 //testing
 app.get("/categories/:category", function(req, res) {
     console.log(req.params.category)
