@@ -1,8 +1,8 @@
 {
     "development": {
       "username": "root",
-      "password": "PinkPiggy1",
-      "database": "categories",
+      "password": "root",
+      "database": "share_it",
       "host": "127.0.0.1",
       "dialect": "mysql"
     },
