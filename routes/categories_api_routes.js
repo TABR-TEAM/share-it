@@ -20,6 +20,7 @@ module.exports = function(app) {
             res.json(dbCategories);
         });
     });
+
     // app.get("/api/categories", function(req, res) {
     //     db.Items.findAll({}).then(function(dbCategories) {
     //         console.log(dbCategories)
@@ -38,17 +39,19 @@ module.exports = function(app) {
     //         res.json(dbCategories);
     //     });
     // });
+
     //test
     app.get("/api/categories/:category", function(req, res) {
         // GET route for retrieving a single item
 
-        console.log(req.params.category)
+        console.log(req.params.category + " Hi from cat_api_routes")
         
        
         //you will want this for db calls
         db.Items.findAll({
             where: {
                 category: req.params.category
+
             }
         }).then(function(dbCategories) {
 
@@ -57,6 +60,7 @@ module.exports = function(app) {
         });
 
         //this will be psuedo data acting like a db hit for category spor)
+
     });
     //end of test route
     app.post("/api/categories", function(req, res) {
@@ -74,5 +78,5 @@ module.exports = function(app) {
         }).then(function(dbCategories) {
             res.json(dbCategories);
         });
-    });
+    })
 }

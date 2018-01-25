@@ -1,4 +1,7 @@
 console.log("Hello from categories.js");
+
+
+
 var categoriesCardsDOM = $("#categories-cards")
 
   console.log(window.location.pathname.slice(12, 100).trim())
@@ -37,20 +40,18 @@ var categoriesCardsDOM = $("#categories-cards")
     categoriesCardsDOM.append(cardDiv);
     }
 
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-    })
+    $('#borrow_it').on('click', function(event) {
+        event.preventDefault();
+        
+        console.log("Button clicked");
+    
+        $.post('/api/categories').then(function (params) {
+            window.location.href = '/profile-home'
+        })
+        $(function () {
+            $('#add-item-modal').modal('toggle');
+         });
+    });
   
-
-

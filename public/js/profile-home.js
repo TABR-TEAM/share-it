@@ -45,6 +45,9 @@ $("#addIt").on("click", function(event){
     }
     })
   })
+  $(function () {
+    $('#add-item-modal').modal('toggle');
+ });
 
 })
 
