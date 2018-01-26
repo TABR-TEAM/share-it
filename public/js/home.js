@@ -11,3 +11,19 @@ $('#homepage-categories').on('click', "#categories-card", function(event) {
     window.location = "categories/" + category
 //   $.get('api/categories')
 })
+
+$("#login-btn").on("click", function(event){
+  event.preventDefault();
+  var email = $("#login-email").val();
+  var password = $("#login-password").val();
+
+  var user = {
+    email: email,
+    password: password
+  };
+
+  $.post("/api/login", user).then(function (res) {
+    console.log(res)
+  })  
+
+})
