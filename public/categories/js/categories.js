@@ -54,4 +54,5 @@ var categoriesCardsDOM = $("#categories-cards")
             $('#add-item-modal').modal('toggle');
          });
     });
+    
   
